@@ -1,11 +1,12 @@
 import React from 'react';
-
+import Slug from './[...slug]';
 import { fetchPage } from '../lib/api';
-import { ZestyView } from '../lib/ZestyView';
 
-export default function Slug(props) {
-  return <ZestyView content={props} />;
+function IndexPage(content) {
+  return <Slug {...content} />;
 }
+
+export default IndexPage;
 
 // This gets called on every request
 export async function getServerSideProps(ctx) {
