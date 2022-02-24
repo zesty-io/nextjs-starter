@@ -3,7 +3,7 @@ module.exports = {
     "zesty": {
       "instance_zuid": "test",
       "stage": "asdasd",
-      "production": "",
+      "production": "https://www.zesty.io",
       "stage_password": "",
       "auth": "",
       "src_dir": ""
