@@ -24,6 +24,12 @@ npm run dev
 From the command line at the root of the project run:
 
 ```
+npm run sync
+```
+
+or
+
+```
 node lib/sync.js
 ```
 
