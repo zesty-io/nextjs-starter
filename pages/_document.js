@@ -6,10 +6,10 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          {/* <link
+          <link
             rel="shortcut icon"
             href="https://brand.zesty.io/zesty-io-app-icon.png"
-          /> */}
+          />
         </Head>
         <body>
           <Main />
