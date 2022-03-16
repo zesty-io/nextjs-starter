@@ -1,10 +1,19 @@
 import React from 'react';
 
-import { fetchPage } from '../lib/api';
-import { ZestyView } from '../lib/ZestyView';
+import { fetchPage } from 'lib/api';
+import { ZestyView } from 'lib/ZestyView';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+
 
 export default function Slug(props) {
-  return <ZestyView content={props} />;
+  return (
+    <>
+    <Header/>
+    <ZestyView content={props} />;
+    <Footer/>
+    </>
+  )
 }
 
 // This gets called on every request
