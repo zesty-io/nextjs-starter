@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { fetchPage } from 'lib/api';
+import { fetchZestyPage } from 'lib/api';
 import { ZestyView } from 'lib/ZestyView';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -18,7 +18,7 @@ export default function Slug(props) {
 
 // This gets called on every request
 export async function getServerSideProps(ctx) {
-  const data = await fetchPage(ctx.resolvedUrl);
+  const data = await fetchZestyPage(ctx.resolvedUrl);
   
   // generate a status 404 page
   if (data.error) return { notFound: true }
