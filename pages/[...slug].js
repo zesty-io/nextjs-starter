@@ -10,7 +10,7 @@ export default function Slug(props) {
   return (
     <>
     <Header/>
-    <ZestyView content={props} />;
+    <ZestyView content={props} />
     <Footer/>
     </>
   )
