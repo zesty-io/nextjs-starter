@@ -10,7 +10,7 @@
     "prettier:fix": "prettier './src/**/*.js' --write",
     "clear-all": "rimraf ./node_modules ./.next",
     "sync": "node lib/sync.js",
-    "postinstall": "node lib/sync.js"
+    "postinstall": "zesty init && npm run sync"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +48,7 @@
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^2.0.2",
     "cross-env": "^7.0.2",
+    "listr": "^0.14.3",
     "prettier": "^2.5.1",
     "prettier-eslint": "^13.0.0",
     "prettier-eslint-cli": "^5.0.0",
