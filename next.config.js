@@ -6,10 +6,10 @@ module.exports = {
   },
   env: {
     zesty: {
-      instance_zuid: '8-90efcab2b3-vrbt4r', // zesty unique id of content instance
-      stage: 'https://832tf4b5-dev.webengine.zesty.io', // e.g. https://XYZ-dev.webengine.zesty.io
-      production: 'http://cli-gsd1fkf2.zesty.dev', // e.g. https://www.acme.com
-      stage_password: 'test',
+      instance_zuid: '', // zesty unique id of content instance
+      stage: '', // e.g. https://XYZ-dev.webengine.zesty.io
+      production: '', // e.g. https://www.acme.com
+      stage_password: '',
       src_dir: '', // where the next project has pages, components, etc folders
     },
   },
