@@ -1,6 +1,6 @@
-<img src="https://user-images.githubusercontent.com/729972/155242158-157ca88c-9047-4671-bd09-2bbef7035022.png" width="130">
 
-# Zesty.io + NextJS
+
+# <img src="https://user-images.githubusercontent.com/729972/155242158-157ca88c-9047-4671-bd09-2bbef7035022.png" width="20"> Zesty.io + NextJS
 
 > Quick start [Next.js](https://nextjs.org/) v12 with [Zesty.io]() as a data source
 
