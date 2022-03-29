@@ -6,6 +6,8 @@ views/zesty
 */views/zesty
 ###end
 
+package-lock.json
+
 # Logs
 logs
 *.log
