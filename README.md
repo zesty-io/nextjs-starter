@@ -1,12 +1,10 @@
-
-
-# <img src="https://user-images.githubusercontent.com/729972/155242158-157ca88c-9047-4671-bd09-2bbef7035022.png" width="20"> Zesty.io + NextJS
+# <img src="https://user-images.githubusercontent.com/729972/155242158-157ca88c-9047-4671-bd09-2bbef7035022.png" width="25"> Zesty.io + Next.js
 
 > Quick start [Next.js](https://nextjs.org/) v12 with [Zesty.io]() as a data source
 
 ## Getting Started
 
-**Prerequsites**
+0. Requirements
 
 - [Node.js 16](https://nodejs.org/en/)
 - [npm](https://www.npmjs.com/)
@@ -16,6 +14,8 @@
 ```Bash
 npx create-next-app --example https://github.com/zesty-io/nextjs-starter
 ```
+
+*The install process will let you use an existing account or create a new. When using an existing account you will be prompted to select from your available instances.*
 
 2. Change directory to your project
 
