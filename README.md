@@ -34,3 +34,10 @@ node lib/sync.js
 ```
 
 This will create new files where needed, but will not overwrite existing files.
+
+
+## Working with Zesty View Components
+
+After a `npm run sync` a view component is created for each Zesty Content Model in the `views/zesty` directory. Zesty Content Items that have URL will automatically resolve to the component in that `views` directory that is assocaited with the content models name.
+
+Each Component loads with a {content} object, this object is a direct feed of that URLs ?toJSON response.  [Read about toJSON](https://zesty.org/services/web-engine/introduction-to-parsley/parsley-index#tojson)
