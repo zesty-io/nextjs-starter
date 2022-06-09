@@ -3,6 +3,7 @@ import { Box, Container } from '@mui/material'
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import { ThemeProvider, createTheme } from '@mui/system';
+
 import Head from 'next/head'
 const theme = createTheme({
   palette: {
@@ -49,10 +50,13 @@ const Main = ({
             <Container >
                 
                 {children}
-                <Box>
-                    <Footer/>
-                </Box>
+                
             </Container>
+            <Box>
+              <Container>
+                <Footer/>
+              </Container>
+            </Box>
         </ThemeProvider>
     )
 }
