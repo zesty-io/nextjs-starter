@@ -1,28 +1,15 @@
-import React, { useState } from 'react';
+/**
+ * The layout/Main/Main.js is included as an example on how to make a global layout for your nextjs project
+ * it is installed with MUI, if you unintsall material, replace the container and box components
+ * with relative counterparts in whatever design system you chose.
+ */
+
+import * as React from 'react';
 import { Box, Container } from '@mui/material'
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import { ThemeProvider, createTheme } from '@mui/system';
 
 import Head from 'next/head'
-const theme = createTheme({
-  palette: {
-    background: {
-      paper: '#fff',
-    },
-    text: {
-      primary: '#173A5E',
-      secondary: '#46505A',
-    },
-    action: {
-      active: '#001E3C',
-    },
-    success: {
-      dark: '#009688',
-    },
-  },
-});
-
 const topBarStyles = {
     background: '#eee' 
 }
@@ -31,33 +18,31 @@ const Main = ({
     children
 }) => {
     return ( 
-        <ThemeProvider theme={theme}>
-            <Head>
-                <link
-                    rel="stylesheet"
-                    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-                />
-                <link
-                    rel="stylesheet"
-                    href="https://fonts.googleapis.com/icon?family=Material+Icons"
-                />
-            </Head>
-            <Box sx={{topBarStyles}}>
-                <Container>
-                    <Header/>
-                </Container>
-            </Box>
-            <Container >
-                
-                {children}
-                
-            </Container>
-            <Box>
+        <>
+          <Head>
+            <link
+                  rel="stylesheet"
+                  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+              />
+              <link
+                  rel="stylesheet"
+                  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              />
+          </Head>
+          <Box sx={{topBarStyles}}>
               <Container>
-                <Footer/>
+                  <Header/>
               </Container>
-            </Box>
-        </ThemeProvider>
+          </Box>
+          <Container>
+            {children}
+          </Container>
+          <Box>
+            <Container>
+              <Footer/>
+            </Container>
+          </Box>
+        </>
     )
 }
 
