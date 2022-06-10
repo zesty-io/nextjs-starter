@@ -78,7 +78,7 @@ These files can be removed if there references are removed.
 * `layout/` this directory is used to create a generic page layouts, and can be removed or customized.
 
 
-**next.config.js**
+### next.config.js
 
 In order for the integration to work, you need `trailingSlash: true` and the `env.zesty: {}` object. See the below example.
 
