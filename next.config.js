@@ -13,10 +13,10 @@ module.exports = {
           stage_password: "",
           src_dir: "", // where the next project has pages, components, etc folders
           options: {
-            skip_config_overwrite: false, // for setups with custom config files, after initial setup of the env.zesty object, set to true
+            skip_config_overwrite: true, // for setups with custom config files, after initial setup of the env.zesty object, set to true
             model_ignore_list: [
               '6-xyz-xyz',
-              '6-xyz-xyz' // an array of models to ignore when creating component files in views/zesty
+              '6-xyz-xyz' // an array of models ZUIDS to ignore when creating component files in views/zesty
             ]
           }
 
