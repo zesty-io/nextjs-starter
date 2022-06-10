@@ -74,7 +74,7 @@ These files can be removed if there references are removed.
 * `components/Header.js` starter example file, not needed.
 * `components/Footer.js` starter example file, not needed.
 * `components/ZestyTutorial.js` starter example file, not needed.
-* `lib/ZestyLink.js` an optional component which it used to make URL path lookup given a relative content ZUID. It requires `zestyURL+'/-/headless/routing.json` as the nav array, and content item ZUID e.g. `7-xyz-xyz`.  
+* `lib/zestyLink.js` an optional component which it used to make URL path lookup given a relative content ZUID. It requires `zestyURL+'/-/headless/routing.json` as the nav array, and content item ZUID e.g. `7-xyz-xyz`.  
 * `layout/` this directory is used to create a generic page layouts, and can be removed or customized.
 
 
