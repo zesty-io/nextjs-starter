@@ -11,7 +11,14 @@ module.exports = {
           stage: "", // e.g. https://XYZ-dev.webengine.zesty.io
           production: "", // e.g. https://www.acme.com
           stage_password: "",
-          src_dir: "" // where the next project has pages, components, etc folders
+          src_dir: "", // where the next project has pages, components, etc folders
+          options: {
+            skip_config_overwrite: false, // for setups with custom config files, after initial setup of the env.zesty object, set to true
+            model_ignore_list: [
+              '6-xyz-xyz' // an array of models to ignore when creating component files in views/zesty
+            ]
+          }
+
       }
   }
 }
