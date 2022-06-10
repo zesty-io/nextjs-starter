@@ -6,10 +6,12 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
+          <meta name="viewport" content="initial-scale=1, width=device-width" />
           <link
             rel="shortcut icon"
             href="https://brand.zesty.io/zesty-io-app-icon.png"
           />
+          
         </Head>
         <body>
           <Main />
