@@ -9,7 +9,7 @@
     "start": "next start",
     "prettier:fix": "prettier './src/**/*.js' --write",
     "clear-all": "rimraf ./node_modules ./.next",
-    "sync": "node lib/sync.js",
+    "sync": "node lib/zesty/sync.js",
     "postinstall": "zesty init && npm run sync"
   },
   "eslintConfig": {

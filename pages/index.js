@@ -1,6 +1,6 @@
 import React from 'react';
 import Slug from './[...slug]';
-import { fetchZestyPage } from 'lib/api';
+import { fetchZestyPage } from 'lib/zesty/fetchPage';
 
 function IndexPage(content) {
   return <Slug {...content} />;

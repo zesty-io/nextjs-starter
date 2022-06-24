@@ -1,10 +1,8 @@
 /**
- * Component which dynamically selects view
+ * Component which dynamically selects the relative content model component view
  */
 import React from 'react';
 import * as Zesty from 'views/zesty';
-import ZestyHead from 'components/ZestyHead';
-
 import Custom404 from 'pages/404';
 
 export function ZestyView(props) {
@@ -16,11 +14,9 @@ export function ZestyView(props) {
   if(modelName.match(/^[0-9]/) !== null){
     modelName = 'N' + modelName;
   }
+  // dynamically resolves the content models component
   const Component = Zesty[modelName];
   return (
-    <>
-      <ZestyHead content={props.content} />
-      <Component content={props.content} />
-    </>
+    <Component content={props.content} />
   );
 }
