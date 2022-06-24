@@ -9,7 +9,7 @@ module.exports = {
   async redirects() {
     return await fetchZestyRedirects()
   },
-  env: { 
+  env: {
       zesty: {
           instance_zuid: "", // zesty unique id of content instance
           stage: "", // e.g. https://XYZ-dev.webengine.zesty.io
