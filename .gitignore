@@ -3,8 +3,8 @@
 # These are added during the post install and then the gitignore rules removed
 .zesty
 # next.config.js
-# views/zesty
-# */views/zesty
+views/zesty
+*/views/zesty
 ###end
 
 package-lock.json
