@@ -11,13 +11,13 @@ module.exports = {
   },
   env: { 
       zesty: {
-          instance_zuid: "8-aaeffee09b-7w6v22", // zesty unique id of content instance
-          stage: "https://kfg6bckb-dev.webengine.zesty.io/", // e.g. https://XYZ-dev.webengine.zesty.io
-          production: "https://www.zesty.io/", // e.g. https://www.acme.com
+          instance_zuid: "", // zesty unique id of content instance
+          stage: "", // e.g. https://XYZ-dev.webengine.zesty.io
+          production: "", // e.g. https://www.acme.com
           stage_password: "",
           src_dir: "", // where the next project has pages, components, etc folders
           options: {
-            skip_config_overwrite: true, // for setups with custom config files, after initial setup of the env.zesty object, set to true
+            skip_config_overwrite: false, // for setups with custom config files, after initial setup of the env.zesty object, set to true
             model_ignore_list: [
               '6-xyz-xyz',
               '6-xyz-xyz' // an array of models ZUIDS to ignore when creating component files in views/zesty
