@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
               <ZestyHead content={pageProps} />
               || 
               <Head>
-                <meta charset="utf-8" />
+                <meta charSet="utf-8" />
                 <title>Next App</title>   
               </Head>
             }
