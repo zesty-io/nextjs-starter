@@ -36,14 +36,13 @@ open browser to http://localhost:3000/
 
 ## Syncing Zesty.io Models
 
-As you develop your Zesty.io instance you will commonly add new models. When you want to sync the latest models this is done with the following command at the root of your project.
+As you develop your Zesty.io instance you will commonly add new content models. In order for new content pages to render in nextjs, there needs to be a relative model component in `views/zesty` to get the lastest models components you can run a script to sync. Do so by running the following command at the root of your project.
 
 ```
 npm run sync
 ```
 
-This will create new files where needed, but will not overwrite existing files.
-
+This sync script will create new files where needed, but will not overwrite existing files.
 
 ## Working with Zesty View Components
 
