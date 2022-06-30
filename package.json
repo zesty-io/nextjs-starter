@@ -26,7 +26,8 @@
     "chalk": "^4.1.2",
     "next": "^12.0.7",
     "node-fetch": "^2.6.7",
-    "react": ">=17.0.0"
+    "react": ">=17.0.0",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.7.0",
