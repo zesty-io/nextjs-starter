@@ -16,6 +16,20 @@ export function ZestyView(props) {
   }
   // dynamically resolves the content models component
   const Component = Zesty[modelName];
+
+  // outside the component near imports
+  const initLiveEditor = async (data) => {
+    const { ZestyLiveEditor } = await import("@zesty-io/live-editor")
+    ZestyLiveEditor(data)
+  }
+
+  // inside the component's function just before the return statement
+  React.useEffect(() => {
+    if(props.content.zestyProductionMode !== true){
+      initLiveEditor(props.content)
+    }
+  }, [])
+  
   return (
     <Component content={props.content} />
   );
