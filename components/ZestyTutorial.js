@@ -8,6 +8,10 @@ import { CardActionArea } from '@mui/material';
 import ArticleIcon from '@mui/icons-material/Article';
 import LaunchIcon from '@mui/icons-material/Launch';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -26,6 +30,8 @@ export default function ZestyTutorial(props) {
   const accountsURL = `https://accounts.zesty.io`;
   const headlessOptions = `${process.env.zesty.stage}/-/headless/`;
   const youtubeTutorial = `https://youtu.be/Y2cux28b9q0?t=183`
+  const prodURL = process.env.zesty.production + '/-/headless/routing.json';
+  const stageURL = process.env.zesty.stage + '/-/headless/routing.json';
   return (
     
     <Container>
@@ -65,7 +71,7 @@ export default function ZestyTutorial(props) {
                     onClick={() => handleClick(youtubeTutorial)}
                     icon={<YouTubeIcon />}
                     variant=""
-                    color="secondary"
+                    color="secondary"s
                   />
                     <Chip
                     label="Login to Zesty"
@@ -131,6 +137,36 @@ export default function ZestyTutorial(props) {
 
                 
               </List>
+
+              <Typography variant="h6" style={{margin: '10px 20px'}}>Zesty/Next.js Integration FAQs</Typography>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography>Does <Chip label="npm run sync" /> need to for new content?</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography  variant="body2">
+                   No. <Chip label="npm run sync" /> only needs to run after new content models are created. New content items of existing content models will dynamically load and render. In fact, The only time sync needs to run it is when a new content model is created and the code base is not aware of it (no matching file in <Chip label="views/zesty/"/>). If the code base already knows about a content model and has an associated view file with it any new content will automatically resolve on the server or your local. 
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography>How is published (production) verse draft (stage) content loaded?</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography variant="body2">
+                   Each Zesty Instance lanches with two domains, one for published content, and another for stage or draft content. Your production url is <a href={prodURL} target="_blank">{prodURL}</a>. Your stage url is <a href={stageURL} target="_blank">{stageURL}</a>. 
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
             
           </Card>
          
@@ -175,6 +211,7 @@ export default function ZestyTutorial(props) {
           </Card>
         </Grid>
       </Grid>
+     
     </Box>
      </Container>
     
