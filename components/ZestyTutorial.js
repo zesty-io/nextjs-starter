@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import { Box, Container, Typography, Grid, Paper, List, ListItemText, ListItem, ListItemIcon, Chip, ListItemButton } from '@mui/material';
+import { Box, Container, Typography, Grid, Paper, Stack, List, ListItemText, ListItem, ListItemIcon, Chip, ListItemButton } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
 import ArticleIcon from '@mui/icons-material/Article';
+import LaunchIcon from '@mui/icons-material/Launch';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -20,6 +21,10 @@ const handleClick = (url) => {
 };
 
 export default function ZestyTutorial(props) {
+  const managerURL = `https://${process.env.zesty.instance_zuid}.manager.zesty.io`;
+  const accountsURL = `https://accounts.zesty.io`;
+  const headlessOptions = `${process.env.zesty.stage}/-/headless/`;
+
   return (
     
     <Container>
@@ -34,7 +39,7 @@ export default function ZestyTutorial(props) {
      
       <Grid container spacing={2} paddingY={3}>
         <Grid item md={8} xs={8}>
-          <Card sx={{ maxWidth: 600 }}>
+          <Card sx={{  }}>
             
               <CardMedia
                 component="img"
@@ -43,6 +48,31 @@ export default function ZestyTutorial(props) {
                 alt="next js and zesty docs"
               />
               <CardContent  style={{marginBottom: 0, paddingBottom: 0}}>
+              <Box padding={2}>
+                <Stack direction="row" spacing={1}>
+                  <Chip
+                    label="Open Your Content Manager"
+                    onClick={() => handleClick(managerURL)}
+                    icon={<LaunchIcon />}
+                    
+                    color="primary"
+                  />
+
+                    <Chip
+                    label="Login to Zesty Accounts"
+                    onClick={() => handleClick(accountsURL)}
+                    icon={<LaunchIcon />}
+                    variant="outlined"
+                  />
+                   <Chip
+                    label="All Headless Endpoints"
+                    onClick={() => handleClick(headlessOptions)}
+                    icon={<LaunchIcon />}
+                    variant="outlined"
+                  />
+                
+                </Stack>
+              </Box>
                 <Typography gutterBottom variant="h5" component="div">
                   Getting Started
                 </Typography>
@@ -96,7 +126,7 @@ export default function ZestyTutorial(props) {
          
         </Grid>
         <Grid item xs={4}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card sx={{ }}>
             <CardActionArea onClick={() => handleClick('https://discord.gg/KYYDy8qYBY')}>
               <CardMedia
                 component="img"
