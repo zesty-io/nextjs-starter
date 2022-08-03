@@ -7,6 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
 import ArticleIcon from '@mui/icons-material/Article';
 import LaunchIcon from '@mui/icons-material/Launch';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -24,7 +25,7 @@ export default function ZestyTutorial(props) {
   const managerURL = `https://${process.env.zesty.instance_zuid}.manager.zesty.io`;
   const accountsURL = `https://accounts.zesty.io`;
   const headlessOptions = `${process.env.zesty.stage}/-/headless/`;
-
+  const youtubeTutorial = `https://youtu.be/Y2cux28b9q0?t=183`
   return (
     
     <Container>
@@ -48,24 +49,33 @@ export default function ZestyTutorial(props) {
                 alt="next js and zesty docs"
               />
               <CardContent  style={{marginBottom: 0, paddingBottom: 0}}>
-              <Box padding={2}>
+              <Typography gutterBottom variant="h6">
+                  Project Links
+                </Typography>
+              <Box padding={0} style={{marginBottom: '10px'}}>
                 <Stack direction="row" spacing={1}>
                   <Chip
-                    label="Open Your Content Manager"
+                    label="Open Content Manager"
                     onClick={() => handleClick(managerURL)}
                     icon={<LaunchIcon />}
-                    
                     color="primary"
                   />
-
+                  <Chip
+                    label="Video Tutorial"
+                    onClick={() => handleClick(youtubeTutorial)}
+                    icon={<YouTubeIcon />}
+                    variant=""
+                    color="secondary"
+                  />
                     <Chip
-                    label="Login to Zesty Accounts"
+                    label="Login to Zesty"
                     onClick={() => handleClick(accountsURL)}
                     icon={<LaunchIcon />}
                     variant="outlined"
                   />
+
                    <Chip
-                    label="All Headless Endpoints"
+                    label="More Headless Endpoints"
                     onClick={() => handleClick(headlessOptions)}
                     icon={<LaunchIcon />}
                     variant="outlined"
@@ -73,7 +83,7 @@ export default function ZestyTutorial(props) {
                 
                 </Stack>
               </Box>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant="h6">
                   Getting Started
                 </Typography>
                 <Typography variant="body1">
@@ -84,7 +94,7 @@ export default function ZestyTutorial(props) {
                 <Typography gutterBottom variant="body1">
                 This starter project installs with a <Chip label="Homepage" /> content model, edit that component from <Chip label="/views/zesty/Homepage.js" />
                 </Typography>
-                <Typography style={{marginBottom: 0, paddingBottom: 0}} variant="h6" component="div">
+                <Typography style={{marginBottom: 0, paddingBottom: 0}} variant="h6">
                   Further Documentation
                 </Typography>
               </CardContent>
