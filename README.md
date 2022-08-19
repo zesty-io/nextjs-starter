@@ -50,6 +50,8 @@ After a `npm run sync` a view component is created for each Zesty Content Model 
 
 Each Component loads with a {content} object, this object is a direct feed of that URLs ?toJSON response.  [Read about toJSON](https://zesty.org/services/web-engine/introduction-to-parsley/parsley-index#tojson)
 
+![Diagram showing toJSON data fetching](https://jvsr216n.media.zestyio.com/nextjs-external-delivery-architecture.jpg)
+
 
 # Custom Integration and the next.config.js file
 
