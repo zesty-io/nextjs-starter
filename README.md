@@ -11,7 +11,7 @@
 
 1. Install
 
-Add Zesty CLI 
+Add Zesty CLI (you may need to sudo this command)
 ```Bash
 npm install -g @zesty-io/cli
 ```
