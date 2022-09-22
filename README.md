@@ -11,6 +11,12 @@
 
 1. Install
 
+Add Zesty CLI 
+```Bash
+npm install -g @zesty-io/cli
+```
+
+Run the Next.js starter
 ```Bash
 npx create-next-app --example https://github.com/zesty-io/nextjs-starter
 ```
