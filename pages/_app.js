@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
                 <title>Next App</title>   
               </Head>
             }
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   )
 }
