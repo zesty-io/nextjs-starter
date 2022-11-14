@@ -41,7 +41,7 @@ export default function ZestyHead({content}) {
       />
       <meta
         name="description"
-        value={content.meta.web.seo_meta_description}
+        content={content.meta.web.seo_meta_description}
       />
       <meta
         property="og:description"
