@@ -192,7 +192,7 @@ export default function ZestyTutorial(props) {
           </Card>
           <br />
           <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea onClick={() => handleClick('https://www.youtube.com/zesty-io')}>
+            <CardActionArea onClick={() => handleClick('https://chat.zesty.io')}>
               <CardMedia
                 component="img"
                 height="140"
