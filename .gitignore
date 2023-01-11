@@ -4,8 +4,8 @@
 .zesty
 next.config.js
 ./next.config.js
-# views/zesty
-# */views/zesty
+views/zesty
+*/views/zesty
 ###end
 
 package-lock.json
