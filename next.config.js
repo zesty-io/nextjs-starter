@@ -9,7 +9,7 @@ module.exports = {
     ignoreDuringBuilds: true
   },
   async redirects() {
-    return await fetchZestyRedirects()
+    return  await fetchZestyRedirects(zestyConfig)
   }, 
   env: {
       zesty: zestyConfig
