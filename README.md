@@ -18,7 +18,7 @@ npm install -g @zesty-io/cli
 
 Run the Next.js marketing
 ```Bash
-npx create-next-app --example https://github.com/zesty-io/nextjs-marketing
+npx create-next-app --example https://github.com/zesty-io/nextjs-starter
 ```
 
 *The install process will let you use an existing account or create a new. When using an existing account you will be prompted to select from your available instances.*
