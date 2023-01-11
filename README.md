@@ -16,9 +16,9 @@ Add Zesty CLI (you may need to sudo this command)
 npm install -g @zesty-io/cli
 ```
 
-Run the Next.js starter
+Run the Next.js marketing
 ```Bash
-npx create-next-app --example https://github.com/zesty-io/nextjs-starter
+npx create-next-app --example https://github.com/zesty-io/nextjs-marketing
 ```
 
 *The install process will let you use an existing account or create a new. When using an existing account you will be prompted to select from your available instances.*
@@ -61,7 +61,7 @@ Each Component loads with a {content} object, this object is a direct feed of th
 
 # Custom Integration and the next.config.js file
 
-Here is an explanation of the next.js zesty integration, use this information to setup a custom integration or to modify this starter in your own project. 
+Here is an explanation of the next.js zesty integration, use this information to setup a custom integration or to modify this marketing in your own project. 
 
 **Required files:**
 
@@ -78,9 +78,9 @@ These files should only be modified for customize integrations.
 
 These files can be removed if there references are removed.
 
-* `components/Header.js` starter example file, not needed.
-* `components/Footer.js` starter example file, not needed.
-* `components/ZestyTutorial.js` starter example file, not needed.
+* `components/Header.js` marketing example file, not needed.
+* `components/Footer.js` marketing example file, not needed.
+* `components/ZestyTutorial.js` marketing example file, not needed.
 * `lib/zestyLink.js` an optional component which it used to make URL path lookup given a relative content ZUID. It requires `zestyURL+'/-/headless/routing.json` as the nav array, and content item ZUID e.g. `7-xyz-xyz`.  
 * `layout/` this directory is used to create a generic page layouts, and can be removed or customized.
 

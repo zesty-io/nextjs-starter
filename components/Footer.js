@@ -7,7 +7,7 @@
 function Footer() {
        
     return (
-        <>Footer/Nav Placeholder</>
+        <></>
     )
 }
 

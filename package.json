@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-starter",
+  "name": "nextjs-marketing",
   "author": "Zesty.io Platform Inc.",
   "version": "1.0.0",
   "private": true,
@@ -23,17 +23,21 @@
     "@mui/icons-material": "^5.8.3",
     "@mui/material": "^5.8.3",
     "@zesty-io/live-editor": "^2.0.24",
+    "@zesty-io/react-autolayout": "^1.0.0-beta.6",
     "@zesty-io/sdk": "^0.3.0",
     "chalk": "^4.1.2",
     "next": "^12.0.7",
     "node-fetch": "^2.6.7",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-modal-image": "^2.6.0",
+    "react-syntax-highlighter": "^15.5.0",
+    "react-youtube": "^10.0.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
-    "@zesty-io/cli": "^0.0.3",
+    "@zesty-io/cli": "^0.0.4",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^2.0.2",
     "cross-env": "^7.0.2",
