@@ -5,6 +5,7 @@ const zestyConfig = require('./zesty.config.json');
 // next config
 module.exports = {
   trailingSlash: true,
+  reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true
   },
