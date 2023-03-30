@@ -4,7 +4,9 @@
  * 
  */
 
-import { Grid, Typography, Box } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
+import Image from 'next/image';
+
 
 import MarketingNav from "./marketing-example/MarketingNav.js";
 
@@ -14,7 +16,7 @@ function Header() {
     <Grid container>
         <Grid item md={4}>
             <Grid container paddingY={1}>
-                <img src="https://brand.zesty.io/zesty-io-logo-dark.svg" height="36" alt="zesty logo" />
+                <Image src="https://brand.zesty.io/zesty-io-logo-dark.svg" width="36" height="36" alt="zesty logo" />
                 <Typography sx={{mt: 1}} paddingX={2}>Next.js Marketing Examples</Typography>
             </Grid>
         </Grid>

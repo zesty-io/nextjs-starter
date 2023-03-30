@@ -6,6 +6,9 @@ const zestyConfig = require('./zesty.config.json');
 module.exports = {
   trailingSlash: true,
   reactStrictMode: true,
+  images: {
+    domains: ['pt9nc6rn.media.zestyio.com'],
+  },
   eslint: {
     ignoreDuringBuilds: true
   },

@@ -6,6 +6,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import TabPanel from 'components/marketing-example/ui/TabPanel'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import Image from 'next/image';
 const { fetchZestyRedirects } = require('lib/zesty/fetchRedirects');
 const zestyConfig = require('zesty.config.json');
 
@@ -73,7 +74,9 @@ export default function Redirects(props) {
         </Box>
         <TabPanel value={value} index={0}>
           <Typography sx={{py: 2}} component="p">The Zesty Manager has a marketing accessible interface for editing redirects. Access that interface <a href={editInZesty}>here</a>.</Typography>
-          <img src="https://pt9nc6rn.media.zestyio.com/redirects-interface.png?width=800" width="60%" alt="Zesty.io Redirect Interface" />
+          <Box width="60%" height="250px" position="relative">
+            <Image src="https://pt9nc6rn.media.zestyio.com/redirects-interface.png?width=800" fill alt="Zesty.io Redirect Interface" style={{objectFit: 'contain'}} />
+          </Box>
           <Typography sx={{py: 2}} component="p">When redirects are created in zesty, they update a dynamic JSON endpoint which can be integrated into your app, see the one for this project <a href={redirectJSONLink} target="_blank">here</a>. </Typography>
           <Typography variant="h6">Example Redirects JSON Output</Typography>
           <SyntaxHighlighter showLineNumbers  language="javascript" style={nord}>
