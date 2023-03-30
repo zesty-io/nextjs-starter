@@ -9,7 +9,6 @@ import { Box, Container } from '@mui/material';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
-import Head from 'next/head';
 const topBarStyles = {
   background: '#eee',
 };
@@ -17,12 +16,6 @@ const topBarStyles = {
 const Main = ({ children }) => {
   return (
     <>
-      <Head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        />
-      </Head>
       <Box sx={{ topBarStyles }}>
         <Container>
           <Header />
