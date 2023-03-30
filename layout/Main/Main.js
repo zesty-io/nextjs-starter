@@ -5,46 +5,37 @@
  */
 
 import * as React from 'react';
-import { Box, Container } from '@mui/material'
+import { Box, Container } from '@mui/material';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
-import Head from 'next/head'
+import Head from 'next/head';
 const topBarStyles = {
-    background: '#eee' 
-}
+  background: '#eee',
+};
 
-const Main = ({
-    children
-}) => {
-    return ( 
-        <>
-          <Head>
-            <link
-                  rel="stylesheet"
-                  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-              />
-              <link
-                  rel="stylesheet"
-                  href="https://fonts.googleapis.com/icon?family=Material+Icons"
-              />
-          </Head>
-          <Box sx={{topBarStyles}}>
-              <Container>
-                  <Header/>
-              </Container>
-          </Box>
-          <Container>
-            {children}
-          </Container>
-          <Box>
-            <Container>
-              <Footer/>
-            </Container>
-          </Box>
-        </>
-    )
-}
-
+const Main = ({ children }) => {
+  return (
+    <>
+      <Head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+      </Head>
+      <Box sx={{ topBarStyles }}>
+        <Container>
+          <Header />
+        </Container>
+      </Box>
+      <Container>{children}</Container>
+      <Box>
+        <Container>
+          <Footer />
+        </Container>
+      </Box>
+    </>
+  );
+};
 
 export default Main;
