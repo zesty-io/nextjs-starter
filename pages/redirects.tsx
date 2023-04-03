@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Typography, Box, Tabs, Tab, Button, Paper, Divider} from '@mui/material';
-import Main from 'layout/Main';
+import Main from '@/layout/Main';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import TabPanel from 'components/marketing-example/ui/TabPanel'
+import TabPanel from '@/components/marketing-example/ui/TabPanel'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import Image from 'next/image';
 const { fetchZestyRedirects } = require('lib/zesty/fetchRedirects');
 const zestyConfig = require('zesty.config.json');
 
-function tabProps(index) {
+type Redirect = {
+  source: string;
+  destination: string;
+}
+
+function tabProps(index: number) {
   return {
     id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`,
@@ -32,22 +37,22 @@ const exampleRedirects = `
 ]
 `
 
-export default function Redirects(props) {
-  const [value, setValue] = React.useState(0);
-  const [redirects, setRedirects] = React.useState([]);
+export default function Redirects() {
+  const [value, setValue] = useState(0);
+  const [redirects, setRedirects] = useState<Redirect[]>([]);
     
-  const handleChange = (event, newValue) => {
-      setValue(newValue);
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
   };
 
   // for populating redirects
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       const data = await fetchZestyRedirects(zestyConfig);
-      setRedirects(data)
-    }
+      setRedirects(data);
+    };
     fetchData().catch(console.error);
-  },[]);
+  }, []);
 
   
   const editInZesty = `https://${process.env.zesty.instance_zuid}.manager.zesty.io/seo`
