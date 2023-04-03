@@ -1,8 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
-import ZestyHead from 'components/zesty/ZestyHead';
+import ZestyHead from '@/components/zesty/ZestyHead';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { Roboto } from 'next/font/google';
+import type { AppProps } from 'next/app'
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -16,7 +17,7 @@ const theme = createTheme({
   },
 });
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       {/* logic to run zesty head if it detects zesty meta data patterns in props, else load alternate head for you to edit */}
