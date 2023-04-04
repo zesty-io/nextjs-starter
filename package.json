@@ -10,12 +10,8 @@
     "prettier:fix": "prettier './src/**/*.js' --write",
     "clear-all": "rimraf ./node_modules ./.next",
     "sync": "node lib/zesty/sync.js",
-    "postinstall": "zesty init && npm run sync"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
+    "postinstall": "zesty init && npm run sync",
+    "lint": "next lint"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -26,7 +22,6 @@
     "@zesty-io/react-autolayout": "^1.0.0-beta.6",
     "@zesty-io/sdk": "^0.3.0",
     "chalk": "^4.1.2",
-    "eslint-config-next": "^13.2.4",
     "next": "^13.2.4",
     "node-fetch": "^2.6.7",
     "react": "^18.2.0",
@@ -39,18 +34,14 @@
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.31",
     "@types/react-dom": "^18.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.7.0",
-    "@typescript-eslint/parser": "^5.7.0",
     "@zesty-io/cli": "^0.0.4",
-    "babel-eslint": "^10.1.0",
-    "babel-plugin-styled-components": "^2.0.2",
     "cross-env": "^7.0.2",
+    "eslint": "^8.37.0",
+    "eslint-config-next": "^13.2.4",
     "execa": "^5.1.1",
     "listr": "^0.14.3",
     "listr-input": "^0.2.1",
     "prettier": "^2.5.1",
-    "prettier-eslint": "^13.0.0",
-    "prettier-eslint-cli": "^5.0.0",
     "rimraf": "^3.0.2",
     "typescript": "^5.0.3"
   }

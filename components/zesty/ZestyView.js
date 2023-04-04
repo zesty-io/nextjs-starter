@@ -1,11 +1,18 @@
 /**
  * Component which dynamically selects the relative content model component view
  */
-import React from 'react';
+import React, { useEffect } from 'react';
 import * as Zesty from 'views/zesty';
 import Custom404 from 'pages/404';
 
 export function ZestyView(props) {
+  // inside the component's function just before the return statement
+  useEffect(() => {
+    if(props.content.zestyProductionMode !== true){
+      //initLiveEditor(props.content)
+    }
+  }, [props.content.zestyProductionMode])
+
   if (props.content.error) {
     return <Custom404 error={props.content} />;
   }
@@ -22,13 +29,6 @@ export function ZestyView(props) {
     const { ZestyLiveEditor } = await import("@zesty-io/live-editor")
     ZestyLiveEditor(data)
   }
-
-  // inside the component's function just before the return statement
-  React.useEffect(() => {
-    if(props.content.zestyProductionMode !== true){
-      //initLiveEditor(props.content)
-    }
-  }, [])
   
   return (
     <Component content={props.content} />
