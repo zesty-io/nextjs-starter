@@ -6,14 +6,18 @@
 
 import * as React from 'react';
 import { Box, Container } from '@mui/material';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const topBarStyles = {
   background: '#eee',
 };
 
-const Main = ({ children }) => {
+type MainProps = {
+  children: React.ReactNode
+}
+
+const Main = ({ children }: MainProps) => {
   return (
     <>
       <Box sx={{ topBarStyles }}>
