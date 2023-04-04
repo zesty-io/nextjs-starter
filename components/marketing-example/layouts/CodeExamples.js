@@ -1,4 +1,4 @@
-export default [
+const codeExamples = [
   {
     name: "Text",
     code: `
@@ -109,3 +109,5 @@ export default [
   }
 
 ]
+
+export default codeExamples
