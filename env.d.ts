@@ -3,6 +3,7 @@ declare namespace NodeJS {
     readonly zesty: {
       readonly stage: string;
       readonly instance_zuid: string;
+      readonly production: string;
     }
   };
 }

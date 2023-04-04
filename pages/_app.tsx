@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import ZestyHead from '@/components/zesty/ZestyHead';
+import { ZestyHead } from '@/components/zesty/ZestyHead';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { Roboto } from 'next/font/google';
 import type { AppProps } from 'next/app'
