@@ -21,11 +21,15 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const handleClick = (url) => {
+const handleClick = (url: string) => {
   window.open(url, '_blank');
 };
 
-export default function ZestyTutorial(props) {
+type ZestyTutorialProps = {
+  // Add any necessary props here
+}
+
+export default function ZestyTutorial(props: ZestyTutorialProps) {
   const managerURL = `https://${process.env.zesty.instance_zuid}.manager.zesty.io`;
   const accountsURL = `https://accounts.zesty.io`;
   const headlessOptions = `${process.env.zesty.stage}/-/headless/`;
@@ -35,7 +39,7 @@ export default function ZestyTutorial(props) {
   return (
     
     <Container>
-      <Box align="center" paddingY={3}>
+      <Box paddingY={3}>
          <Typography align="center" component="p">
         
           Welcome to the Zesty.io Next.js starter! Learn more from the project read me <a href="https://github.com/zesty-io/nextjs-starter" target="_blank">https://github.com/zesty-io/nextjs-starter</a>
@@ -70,8 +74,7 @@ export default function ZestyTutorial(props) {
                     label="Video Tutorial"
                     onClick={() => handleClick(youtubeTutorial)}
                     icon={<YouTubeIcon />}
-                    variant=""
-                    color="secondary"s
+                    color="secondary"
                   />
                     <Chip
                     label="Login to Zesty"
