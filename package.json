@@ -10,7 +10,8 @@
     "clear-all": "rimraf ./node_modules ./.next",
     "sync": "node lib/zesty/sync.js",
     "postinstall": "zesty init && npm run sync",
-    "lint": "next lint"
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
