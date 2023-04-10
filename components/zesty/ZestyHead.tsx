@@ -2,32 +2,34 @@
  * ZestyHead.js
  * This file automatically sets meta data associated with zesty content. It is intended to load with slug.
  * Modify this file to suit your needs
- * Logic to load this file is in _document.js, it could also live in _app.js 
+ * Logic to load this file is in _document.js, it could also live in _app.js
  * To have an alternate head, see the logic in _document.js and use next/head there
  */
 
 import React from 'react';
 import Head from 'next/head';
+import { ContentItem } from '@/types';
 
-
-// TODO: Improve typing of content returned from fetchZestyPage
 type ZestyHeadProps = {
-  content: any;
-}
+  content: ContentItem;
+};
 
 export const ZestyHead = ({ content }: ZestyHeadProps) => {
   // default OG image, set your own here
-  let ogimage = 'https://kfg6bckb.media.zestyio.com/zesty-share-image-generic.png?width=1200';
+  let ogimage =
+    'https://kfg6bckb.media.zestyio.com/zesty-share-image-generic.png?width=1200';
   // set your own favicon here
   let favicon = 'https://brand.zesty.io/favicon.png';
   // determine if there is a custom og image
   if (content?.og_image) {
     ogimage = content.og_image.data[0].url + '?width=1200';
-  // if custom og not set, find the first field with image in the name and set that
+    // if custom og not set, find the first field with image in the name and set that
   } else if (Object.keys(content).find((name) => name.includes('image'))) {
     let imageKey = Object.keys(content).find((name) => name.includes('image'));
     if (imageKey) {
-      ogimage = content[imageKey]?.data ? content[imageKey].data[0].url + '?width=1200' : ogimage;
+      ogimage = content[imageKey]?.data
+        ? content[imageKey].data[0].url + '?width=1200'
+        : ogimage;
     }
   }
 
@@ -42,10 +44,7 @@ export const ZestyHead = ({ content }: ZestyHeadProps) => {
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
-      <meta
-        property="og:title"
-        content={content.meta.web.seo_meta_title}
-      />
+      <meta property="og:title" content={content.meta.web.seo_meta_title} />
       <meta
         name="description"
         content={content.meta.web.seo_meta_description}
@@ -54,10 +53,7 @@ export const ZestyHead = ({ content }: ZestyHeadProps) => {
         property="og:description"
         content={content.meta.web.seo_meta_description}
       />
-      <meta 
-        property="og:image"
-        content={ogimage}
-      />
+      <meta property="og:image" content={ogimage} />
     </Head>
   );
-}
+};

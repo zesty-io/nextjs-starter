@@ -2,13 +2,9 @@ import React from 'react';
 import { GetServerSideProps } from 'next';
 import Slug from './[...slug]';
 import { fetchZestyPage } from 'lib/zesty/fetchPage';
+import { ContentItem } from '@/types';
 
-// TODO: Improve typing of content returned from fetchZestyPage
-type IndexPageProps = {
-  [key: string]: any;
-}
-
-function IndexPage(content: IndexPageProps) {
+function IndexPage(content: ContentItem) {
   return <Slug {...content} />;
 }
 
