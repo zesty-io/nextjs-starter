@@ -4,11 +4,11 @@
 import React, { useEffect } from 'react';
 import * as Zesty from '@/views/zesty';
 import Custom404 from '@/pages/404';
+import { ContentItem } from '@/types';
 
-// TODO: Improve typing of content returned from fetchZestyPage
 type ZestyViewProps = {
-  content: any;
-}
+  content: ContentItem;
+};
 
 export const ZestyView = (props: ZestyViewProps) => {
   // inside the component's function just before the return statement
@@ -27,16 +27,13 @@ export const ZestyView = (props: ZestyViewProps) => {
     modelName = 'N' + modelName;
   }
   // dynamically resolves the content models component
-  // TODO: Improve typing of content returned from fetchZestyPage
-  const Component = (Zesty as any)[modelName] as React.FC<{ content: any }>;
+  const Component = (Zesty as any)[modelName];
 
   // outside the component near imports
   const initLiveEditor = async (data: any) => {
-    const { ZestyLiveEditor } = await import("@zesty-io/live-editor");
+    const { ZestyLiveEditor } = await import('@zesty-io/live-editor');
     ZestyLiveEditor(data);
   };
-  
-  return (
-    <Component content={props.content} />
-  );
+
+  return <Component content={props.content} />;
 };

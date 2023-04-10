@@ -5,18 +5,14 @@ import { ZestyView } from '@/components/zesty/ZestyView';
 
 // main is used here, its a base for layout that uses Material UI (mui), delete it if you dont want it, and just return <ZestyView content={props} />
 import Main from '@/layout/Main';
+import { ContentItem } from '@/types';
 
-// TODO: Improve typing of content returned from fetchZestyPage
-type SlugProps = {
-  [key: string]: any;
-}
-
-export default function Slug(props: SlugProps) {
+export default function Slug(props: ContentItem) {
   return (
     <Main>
       <ZestyView content={props} />
     </Main>
-  )
+  );
 }
 
 // This gets called on every request, its for SSR mode in next
