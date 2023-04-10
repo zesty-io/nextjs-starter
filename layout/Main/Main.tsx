@@ -9,29 +9,21 @@ import { Box, Container } from '@mui/material';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-const topBarStyles = {
-  background: '#eee',
-};
-
 type MainProps = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const Main = ({ children }: MainProps) => {
   return (
-    <>
-      <Box sx={{ topBarStyles }}>
-        <Container>
-          <Header />
-        </Container>
-      </Box>
-      <Container>{children}</Container>
-      <Box>
-        <Container>
-          <Footer />
-        </Container>
-      </Box>
-    </>
+    <Container>
+      <header>
+        <Header />
+      </header>
+      <main>{children}</main>
+      <footer>
+        <Footer />
+      </footer>
+    </Container>
   );
 };
 
