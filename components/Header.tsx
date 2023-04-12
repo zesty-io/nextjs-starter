@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 function Header() {
   return (
-    <AppBar color="inherit">
+    <AppBar color="inherit" position="sticky">
       <Container>
         <Toolbar disableGutters>
           <Box

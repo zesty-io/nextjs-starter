@@ -1,33 +1,24 @@
-import ZestyTutorial from 'components/ZestyTutorial'
-import React  from 'react';
-import { AutoLayout } from "@zesty-io/react-autolayout";
-import { Typography, Box, Tabs, Tab, Divider} from '@mui/material';
-import PropTypes from 'prop-types';
-import TabPanel from 'components/marketing-example/ui/TabPanel'
+import { Grid } from '@mui/material';
+import { ArticleCard } from '@/components/ArticleCard';
 
-import { CustomRow } from "components/marketing-example/personalization/CustomRow";
-import { CustomColumn } from "components/marketing-example/personalization/CustomColumn";
-import { CustomTextarea } from "components/marketing-example/personalization/CustomTextarea";
-import { CustomText } from "components/marketing-example/personalization/CustomText";
-import { CustomLink } from "components/marketing-example/personalization/CustomLink";
-import { CustomImage } from "components/marketing-example/personalization/CustomImage";
+export default function Homepage({ content }) {
+  const articles = content.articles.data;
 
-export default function Homepage({content}){
+  return (
+    <Grid container spacing={4}>
+      <Grid item xs={12}>
+        <ArticleCard {...articles[0]} />
+      </Grid>
 
-    return (
-        <> 
-           <Box sx={{ mt: 4 }}>
-            <AutoLayout content={content} components={{
-                    "wysiwyg_advanced": CustomTextarea,
-                    "text": CustomText,
-                    "column": CustomColumn,
-                    "row": CustomRow,
-                    "link": CustomLink,
-                    "design": ZestyTutorial                   
-                }} />
-        </Box>
-        {/* <Divider/>
-            <ZestyTutorial contnet={content}></ZestyTutorial> */}
-        </> 
-    )
+      <Grid item xs={12} sm={6} md={4}>
+        <ArticleCard {...articles[1]} />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4}>
+        <ArticleCard {...articles[2]} />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4}>
+        <ArticleCard {...articles[3]} />
+      </Grid>
+    </Grid>
+  );
 }

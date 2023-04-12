@@ -5,7 +5,6 @@
 import * as React from 'react';
 import { Container, CssBaseline } from '@mui/material';
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 
 type MainProps = {
   children: React.ReactNode;
@@ -14,15 +13,10 @@ type MainProps = {
 const Main = ({ children }: MainProps) => {
   return (
     <>
-      <header>
-        <Header />
-      </header>
-      <Container>
+      <Header />
+      <Container sx={{ my: 8 }}>
         <main>{children}</main>
       </Container>
-      <footer>
-        <Footer />
-      </footer>
     </>
   );
 };
