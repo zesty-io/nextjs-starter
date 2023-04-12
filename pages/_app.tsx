@@ -1,9 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
 import { ZestyHead } from '@/components/zesty/ZestyHead';
-import { createTheme, ThemeProvider } from '@mui/material';
+import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 import { Roboto } from 'next/font/google';
 import type { AppProps } from 'next/app';
+import { grey } from '@mui/material/colors';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -14,6 +15,15 @@ const roboto = Roboto({
 const theme = createTheme({
   typography: {
     fontFamily: roboto.style.fontFamily,
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          backgroundColor: grey[50],
+        },
+      },
+    },
   },
 });
 
@@ -28,6 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </Head>
       )}
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <Component {...pageProps} />
       </ThemeProvider>
     </>
