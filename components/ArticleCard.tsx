@@ -1,3 +1,4 @@
+import { Article, ContentItem } from '@/types';
 import {
   Avatar,
   Box,
@@ -6,54 +7,63 @@ import {
   CardMedia,
   Typography,
 } from '@mui/material';
+import Link from 'next/link';
 
-type ArticleCardProps = {};
+type ArticleCardProps = {
+  article: ContentItem<Article>;
+};
 
-export const ArticleCard = ({ title, subtitle, image, date, author }: any) => {
+export const ArticleCard = ({ article }: ArticleCardProps) => {
   return (
-    <Card
-      variant="outlined"
-      sx={{
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        border: 0,
-        background: 'transparent',
-      }}
-    >
-      <CardMedia
-        component="img"
-        image={image}
+    <Link href={article.meta.web.uri} style={{ textDecoration: 'none' }}>
+      <Card
+        variant="outlined"
         sx={{
-          minHeight: '193px',
-          maxHeight: '484px',
-          flex: 1,
-          borderRadius: '4px',
-          boxShadow: 2,
-        }}
-      />
-      <CardContent
-        sx={{
-          minHeight: '208px',
+          height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between',
+          border: 0,
+          background: 'transparent',
         }}
       >
-        <Box>
-          <Typography variant="h6">{title}</Typography>
-          <Typography>{subtitle}</Typography>
-        </Box>
-        <Box display="flex" gap={1}>
-          <Avatar src={author.data[0].image.data[0].url} />
+        <CardMedia
+          component="img"
+          image={article.image}
+          sx={{
+            minHeight: '193px',
+            maxHeight: '484px',
+            flex: 1,
+            borderRadius: '4px',
+            boxShadow: 2,
+          }}
+        />
+        <CardContent
+          sx={{
+            minHeight: '180px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+          }}
+        >
           <Box>
-            <Typography variant="subtitle2">{author.data[0].name}</Typography>
-            <Typography variant="caption">
-              {new Date(date).toDateString()}
+            <Typography noWrap variant="h6">
+              {article.title}
             </Typography>
+            <Typography color="textSecondary">{article.subtitle}</Typography>
           </Box>
-        </Box>
-      </CardContent>
-    </Card>
+          <Box display="flex" gap={1}>
+            <Avatar src={article.author.data[0].image.data[0].url} />
+            <Box>
+              <Typography variant="subtitle2">
+                {article.author.data[0].name}
+              </Typography>
+              <Typography variant="caption">
+                {new Date(article.date).toDateString()}
+              </Typography>
+            </Box>
+          </Box>
+        </CardContent>
+      </Card>
+    </Link>
   );
 };

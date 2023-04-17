@@ -16,15 +16,6 @@ const theme = createTheme({
   typography: {
     fontFamily: roboto.style.fontFamily,
   },
-  components: {
-    MuiCssBaseline: {
-      styleOverrides: {
-        body: {
-          backgroundColor: grey[50],
-        },
-      },
-    },
-  },
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
