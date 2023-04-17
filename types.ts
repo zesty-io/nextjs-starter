@@ -1,3 +1,21 @@
+export type Article = {
+  title: string;
+  subtitle: string;
+  image: string;
+  date: string;
+  content: string;
+  author: {
+    data: {
+      name: string;
+      image: {
+        data: {
+          url: string;
+        }[];
+      };
+    }[];
+  };
+};
+
 export type Locale = {
   id: string;
   name: string;
@@ -81,9 +99,10 @@ export type NavigationTreeItem = {
   zuid: string;
 };
 
-export type ContentItem = {
-  // Any fields in the content model
-  [key: string]: any;
+export type ContentItem<T extends Record<string, any> = Record<string, any>> = {
+  // Any fields in the content model, using the generic type parameter T
+  [K in keyof T]: T[K];
+} & {
   // Meta data about the content item
   meta: Meta;
   zestyProductionMode: boolean;
