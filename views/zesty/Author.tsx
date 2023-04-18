@@ -24,9 +24,10 @@
  * Images API: https://zesty.org/services/media-storage-micro-dam/on-the-fly-media-optimization-and-dynamic-image-manipulation
  */
 
+import { ContentItem } from '@/types';
 import React from 'react';
 
-function Author({ content }) {
+function Author({ content }: ContentItem) {
   return (
     <>
       {/* Zesty.io Output Example and accessible JSON object for this component. Delete or comment out when needed.  */}
