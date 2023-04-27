@@ -1,14 +1,14 @@
 // zesty imports
 const { fetchZestyRedirects } = require("./lib/zesty/fetchRedirects");
-const zestyConfig = require("./zesty.config.json");
+const zestyConfig = require("./.zesty/config.json");
 
 // next config
 module.exports = {
   trailingSlash: true,
   reactStrictMode: true,
-  images: {
-    domains: [zestyConfig.media_domain],
-  },
+  // images: {
+  //   domains: [zestyConfig.media_domain],
+  // },
   eslint: {
     ignoreDuringBuilds: true,
   },
