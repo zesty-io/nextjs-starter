@@ -26,36 +26,54 @@
  * Images API: https://zesty.org/services/media-storage-micro-dam/on-the-fly-media-optimization-and-dynamic-image-manipulation
  */
 
-import { Article as ArticleType, ContentItem } from '@/types';
-import { Avatar, Box, Paper, Typography } from '@mui/material';
-import Image from 'next/image';
-import React from 'react';
+import { Article as ArticleType, ContentItem } from "@/types";
+import { Avatar, Box, IconButton, Paper, Typography } from "@mui/material";
+import EditIcon from "@mui/icons-material/Edit";
+import Image from "next/image";
+import React from "react";
+import Link from "next/link";
 
 function Article({ content }: { content: ContentItem<ArticleType> }) {
   return (
     <>
-      <Box height={450} sx={{ position: 'relative' }}>
+      <Box height={450} sx={{ position: "relative" }}>
         <Image
           src={content.image}
           fill
           alt="Article hero image"
-          style={{ borderRadius: '6px', objectFit: 'contain' }}
+          style={{ borderRadius: "6px", objectFit: "contain" }}
         />
       </Box>
       <Paper
         elevation={3}
         sx={{
           p: 3,
-          mx: 'auto',
-          maxWidth: '800px',
-          position: 'relative',
-          top: '-80px',
+          mx: "auto",
+          maxWidth: "800px",
+          position: "relative",
+          top: "-80px",
         }}
       >
-        <Typography variant="h4" fontWeight="bold">
-          {content.title}
-        </Typography>
-        <Typography color="textSecondary">{content.subtitle}</Typography>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="flex-start"
+        >
+          <Box>
+            <Typography variant="h4" fontWeight="bold">
+              {content.title}
+            </Typography>
+            <Typography color="textSecondary">{content.subtitle}</Typography>
+          </Box>
+          <Link
+            href={`https://${content.zestyInstanceZUID}.manager.zesty.io/content/${content.meta.model.zuid}/${content.meta.zuid}`}
+            target="_blank"
+          >
+            <IconButton>
+              <EditIcon />
+            </IconButton>
+          </Link>
+        </Box>
         <Box display="flex" gap={1} mt={3}>
           <Avatar src={content.author.data[0].image.data[0].url} />
           <Box>
