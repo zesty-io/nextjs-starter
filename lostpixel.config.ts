@@ -8,7 +8,7 @@ export const config: CustomProjectConfig = {
         path: "/",
       },
     ],
-    baseUrl: "http://127.0.0.1:3001",
+    baseUrl: "http://127.0.0.1:3000",
   },
   generateOnly: true,
   failOnDifference: true,
