@@ -26,7 +26,7 @@ export function ZestyView(props) {
   // inside the component's function just before the return statement
   React.useEffect(() => {
     if(props.content.zestyProductionMode !== true){
-      // initLiveEditor(props.content)
+      //initLiveEditor(props.content)
     }
   }, [])
   

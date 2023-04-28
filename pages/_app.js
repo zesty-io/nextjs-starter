@@ -12,10 +12,10 @@ function MyApp({ Component, pageProps }) {
               || 
               <Head>
                 <meta charSet="utf-8" />
-                <title>Next App</title>   
+                <title>Zesty.io Next.js Marketing Technology Example Starter</title>   
               </Head>
             }
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   )
 }

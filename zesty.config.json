@@ -1,13 +1,14 @@
 {
-    "instance_zuid": "", 
-    "stage": "", 
-    "production": "", 
-    "stage_password": "",
-    "src_dir": "", 
-    "options": {
-      "skip_config_overwrite": false,
-      "model_ignore_list": [
-        "6-xyz" 
-      ]
-    }
+  "instance_zuid": "", 
+  "stage": "", 
+  "production": "", 
+  "stage_password": "",
+  "src_dir": "", 
+  "options": {
+    "skip_config_overwrite": false,
+    "model_ignore_list": [
+      "6-xyz" 
+    ]
+  },
+  "runinstaller" : true
 }

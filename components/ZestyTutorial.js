@@ -173,7 +173,7 @@ export default function ZestyTutorial(props) {
         </Grid>
         <Grid item xs={4}>
           <Card sx={{ }}>
-            <CardActionArea onClick={() => handleClick('https://discord.gg/KYYDy8qYBY')}>
+            <CardActionArea onClick={() => handleClick('https://chat.zesty.io')}>
               <CardMedia
                 component="img"
                 height="140"
