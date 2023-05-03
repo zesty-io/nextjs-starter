@@ -7,7 +7,7 @@ module.exports = {
   trailingSlash: true,
   reactStrictMode: true,
   images: {
-    domains: [zestyConfig.media_domain],
+    domains: zestyConfig.media_domains,
   },
   eslint: {
     ignoreDuringBuilds: true,
