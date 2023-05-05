@@ -1,11 +1,13 @@
-import React from 'react';
-import { GetServerSideProps } from 'next';
-import { fetchZestyPage } from 'lib/zesty/fetchPage';
-import { ZestyView } from '@/components/zesty/ZestyView';
+import React from "react";
+import { GetServerSideProps } from "next";
+
+import { fetchPageJson } from "@zesty-io/nextjs-sync";
+
+import { ZestyView } from "@/components/zesty/ZestyView";
 
 // main is used here, its a base for layout that uses Material UI (mui), delete it if you dont want it, and just return <ZestyView content={props} />
-import Main from '@/layout/Main';
-import { ContentItem } from '@/types';
+import Main from "@/layout/Main";
+import { ContentItem } from "@/types";
 
 export default function Slug(props: ContentItem) {
   return (
@@ -17,14 +19,19 @@ export default function Slug(props: ContentItem) {
 
 // This gets called on every request, its for SSR mode in next
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  // zesty fetch
-  const data = await fetchZestyPage(ctx.resolvedUrl);
+  try {
+    const data = await fetchPageJson(ctx.resolvedUrl);
 
-  // add your own custom logic here if needed, set your data to {data.yourData} ...
+    // add your own custom logic here if needed, set your data to {data.yourData} ...
 
-  // generate a status 404 page
-  if (data.error) return { notFound: true };
+    // generate a status 404 page
+    if (data.error) return { notFound: true };
 
-  // Pass data to the page via props
-  return { props: data };
+    // Pass data to the page via props
+    return { props: data };
+  } catch (error) {
+    // handle unexpected errors
+    console.error(error);
+    return { notFound: true };
+  }
 };

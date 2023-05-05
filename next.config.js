@@ -1,21 +1,14 @@
-// zesty imports
-const { fetchZestyRedirects } = require("./lib/zesty/fetchRedirects");
-const zestyConfig = require("./zesty.config.json");
-
 // next config
 module.exports = {
   trailingSlash: true,
   reactStrictMode: true,
-  images: {
-    domains: zestyConfig.media_domains,
-  },
   eslint: {
     ignoreDuringBuilds: true,
   },
   async redirects() {
-    return await fetchZestyRedirects(zestyConfig);
-  },
-  env: {
-    zesty: zestyConfig,
+    // Dynamic module import because nextjs-sync is ESM
+    const zestyNext = await import("@zesty-io/nextjs-sync");
+    const data = await zestyNext.fetchRedirects();
+    return data;
   },
 };
