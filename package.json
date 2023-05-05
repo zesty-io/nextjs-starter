@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "sync": "node lib/zesty/sync.js",
+    "sync": "./node_modules/.bin/nextjs-sync",
     "postinstall": "zesty init && npm run sync",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
