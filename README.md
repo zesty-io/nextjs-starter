@@ -11,11 +11,6 @@
 
 1. Install
 
-Add Zesty CLI (you may need to sudo this command)
-```Bash
-npm install -g @zesty-io/cli
-```
-
 Run the Next.js marketing
 ```Bash
 npx create-next-app --example https://github.com/zesty-io/nextjs-starter
