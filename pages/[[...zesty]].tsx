@@ -9,7 +9,7 @@ import { ZestyView } from "@/components/zesty/ZestyView";
 import Main from "@/layout/Main";
 import { ContentItem } from "@/types";
 
-export default function Slug(props: ContentItem) {
+export default function Zesty(props: ContentItem) {
   return (
     <Main>
       <ZestyView content={props} />

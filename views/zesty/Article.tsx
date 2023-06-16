@@ -42,6 +42,7 @@ function Article({ content }: { content: ContentItem<ArticleType> }) {
           fill
           alt="Article hero image"
           style={{ borderRadius: "6px", objectFit: "contain" }}
+          unoptimized
         />
       </Box>
       <Paper
