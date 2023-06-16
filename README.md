@@ -2,7 +2,7 @@
 
 > Quick start [Next.js](https://nextjs.org/) v13 with [Zesty.io]() as a data source
 
-> _If you are using NextJS v12 look at [this starter](https://github.com/zesty-io/nextjs-starter)_
+> If you are using NextJS v12 look at [this starter](https://github.com/zesty-io/nextjs-starter)\_
 
 ## Getting Started
 
