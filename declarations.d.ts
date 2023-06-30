@@ -1,1 +1,1 @@
-declare module "lib/zesty/fetchPage";
+declare module "@zesty-io/nextjs-sync";
