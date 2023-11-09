@@ -1,6 +1,6 @@
-import { Grid } from '@mui/material';
-import { ArticleCard } from '@/components/ArticleCard';
-import { Article, ContentItem } from '@/types';
+import { Grid } from "@mui/material";
+import { ArticleCard } from "@/components/ArticleCard";
+import { Article, ContentItem } from "@/types";
 
 export default function Homepage({ content }: { content: ContentItem }) {
   const articles = content.articles.data as ContentItem<Article>[];

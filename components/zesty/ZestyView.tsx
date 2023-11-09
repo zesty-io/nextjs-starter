@@ -1,20 +1,23 @@
+"use client";
+
 /**
  * Component which dynamically selects the relative content model component view
  */
-import React, { useEffect } from "react";
-import * as Zesty from "@/views/zesty";
-import Custom404 from "@/pages/404";
+import React from "react";
+import * as Zesty from "../../views/zesty";
 import { ContentItem } from "@/types";
+import Header from "../Header";
+import { Container } from "@mui/material";
 
 type ZestyViewProps = {
   content: ContentItem;
 };
 
-export const ZestyView = (props: ZestyViewProps) => {
-  if (props.content.error) {
-    return <Custom404 />;
+export const ZestyView = ({ content }: ZestyViewProps) => {
+  if (content.error || content.notFound) {
+    return <div>error 404</div>;
   }
-  let modelName = props.content.meta.model_alternate_name;
+  let modelName = content.meta.model_alternate_name;
   // check if the model name starts with a numeric value, if so prepend N to match component creation name
   if (modelName.match(/^[0-9]/) !== null) {
     modelName = "N" + modelName;
@@ -22,5 +25,12 @@ export const ZestyView = (props: ZestyViewProps) => {
   // dynamically resolves the content models component
   const Component = (Zesty as any)[modelName];
 
-  return <Component content={props.content} />;
+  return (
+    <>
+      <Header />
+      <Container>
+        <Component content={content} />;
+      </Container>
+    </>
+  );
 };

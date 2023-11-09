@@ -1,5 +1,7 @@
-import { AppBar, Box, Container, Toolbar, Typography } from '@mui/material';
-import Image from 'next/image';
+"use client";
+
+import { AppBar, Box, Container, Toolbar, Typography } from "@mui/material";
+import Image from "next/image";
 
 function Header() {
   return (
@@ -12,8 +14,8 @@ function Header() {
             display="flex"
             gap={1}
             sx={{
-              textDecoration: 'none',
-              color: 'inherit',
+              textDecoration: "none",
+              color: "inherit",
             }}
           >
             <Image
